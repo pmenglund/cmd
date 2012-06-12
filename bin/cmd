@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+#
+
+$LOAD_PATH.unshift(File.expand_path(File.join(File.dirname(__FILE__), "..", "lib")))
+
+require "cmd"
+require "trollop"
+
+opts = Trollop::options do
+  opt :name, "say hi to whom", :type => String, :required => true
+end
+
+Cmd.new.say_hi(opts[:name])
